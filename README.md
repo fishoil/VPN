@@ -1,8 +1,8 @@
 # VPN
 
 Required python package: <br><br>
-click==7.1.2<br>
-Flask==1.1.2<br>
+click<br>
+Flask<br>
 Flask-RESTful<br>
 Flask-SQLAlchemy<br>
 itsdangerous<br>
