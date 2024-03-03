@@ -1,18 +1,20 @@
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, DateTime, BigInteger, ForeignKey
+# from datetime import datetime
+
+class Users(db.Model, UserMixin):  # base table
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    user_name = Column(String(24), unique=True)
+    email = Column(String(50), unique=True)
+    password = Column(String(24))
+    date_created = Column(DateTime(timezone=True), default=func.now())
+    # last_login_time = Column(DateTime(timezone=True))
+    
 
 
-class Note(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(10000))
-    date = db.Column(db.DateTime(timezone=True), default=func.now())
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
-    first_name = db.Column(db.String(150))
-    notes = db.relationship('Note')
