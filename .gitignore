@@ -1,2 +1,8 @@
 main
 test
+vpn
+__pycache__
+.vscode
+website/__pycache__
+website/database.db
+instance

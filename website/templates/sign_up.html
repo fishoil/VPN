@@ -1,0 +1,69 @@
+{% extends "base.html" %} 
+{% block title %} SIGNUP {% endblock %} 
+{% block content %}
+<style>
+  body {
+    background-color: black;
+  }
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 100px;
+    color: white;
+  }
+</style>
+<div class="icon">
+  <i class="fas fa-shield-alt"></i>
+</div>
+<form method="POST">
+  <h3 align="center" style="color: white;">Create Account</h3>
+  <div class="form-group">
+    <label for="email" style="color: white;">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      style="color: black;"
+    />
+  </div>
+  <div class="form-group">
+    <label for="firstName" style="color: white;">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+      style="color: black;"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password1" style="color: white;">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+      style="color: black;"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password2" style="color: white;">Password (Confirm)</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+      style="color: black;"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
