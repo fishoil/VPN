@@ -12,7 +12,6 @@ auth = Blueprint('auth', __name__)
 def login():
     if request.method == 'POST':
         user_name = request.form.get('username')
-        # email = request.form.get('email')
         password = request.form.get('password')
         
         user = Users.query.filter_by(user_name=user_name).first()
@@ -37,10 +36,6 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
-# @auth.route('/home')
-# @login_required
-# def home():
-#     return render_template("home.html", user=current_user)
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():

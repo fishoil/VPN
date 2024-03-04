@@ -3,7 +3,6 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, DateTime, BigInteger, ForeignKey
-# from datetime import datetime
 
 class Users(db.Model, UserMixin):  # base table
     __tablename__ = 'users'
