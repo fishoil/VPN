@@ -10,7 +10,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 @login_required
-def home():
+def add_user():
     if request.method == 'POST':
         user = request.form.get('user')
         
@@ -23,5 +23,9 @@ def home():
             flash('User added!', category='success')
         
     return render_template("home.html", user=current_user)
+
+
+
+
     
 
